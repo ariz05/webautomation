@@ -1,4 +1,4 @@
-#### New York Times Project
+#### Web Automation Project
 
 This project contains code base for Web automation assignment. Under this, we are writing end to end automated tests for GUI testing.
 
