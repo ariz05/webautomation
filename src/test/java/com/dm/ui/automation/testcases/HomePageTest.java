@@ -27,6 +27,7 @@ public class HomePageTest extends BaseClass {
     @Step("Verify Login page is opened")
     @Severity(SeverityLevel.NORMAL)
     public void openLoginPage(HashMap<String, String> hshMap) throws IOException {
+        System.out.println("Testcase Description : " + hshMap.get("testcase description"));
         HomePage homePage = new HomePage(driver);
         homePage.clickLoginButton();
         //Validate login page is opened.
@@ -43,16 +44,14 @@ public class HomePageTest extends BaseClass {
     @Step("Verify today's date on home page.")
     @Severity(SeverityLevel.NORMAL)
     public void validateDate(HashMap<String, String> hshMap) throws IOException {
+        System.out.println("Testcase Description : " + hshMap.get("testcase description"));
         HomePage homePage = new HomePage(driver);
         CommonUtils.assertFields("equals", "HomePageTitle", hshMap.get("validation"), homePage.getHomePageTitle());
         //Validate today's date.
-        //Wednesday, July 17, 2024
         String pattern = "EEEE, MMMM dd, yyyy";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         String date = simpleDateFormat.format(new Date());
-
         CommonUtils.assertFields("equals", "HomePageDate", date, homePage.getTodayDate());
-
 
     }
 

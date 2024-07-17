@@ -25,11 +25,10 @@ public class LoginTest extends BaseClass {
     @Step("Verify Login functionality")
     @Severity(SeverityLevel.NORMAL)
     public void testValidLogin(HashMap<String, String> hshMap) throws IOException {
-
+        System.out.println("Testcase Description : " + hshMap.get("testcase description"));
         //Home page Login button is clicked.
         HomePage homePage = new HomePage(driver);
         homePage.clickLoginButton();
-
 
         //Provide credentials on Login page.
         LoginPage loginPage = new LoginPage(driver);
@@ -43,8 +42,6 @@ public class LoginTest extends BaseClass {
         //Successful Login validation
         SubscriptionPage subscriptionPage = new SubscriptionPage(driver);
         CommonUtils.assertFields("equals", "SubscriptionPageTitle", hshMap.get("validation"), subscriptionPage.getSubscriptionPageTitle());
-
-
     }
 
     //Error scenarios.
@@ -56,11 +53,10 @@ public class LoginTest extends BaseClass {
     @Step("Verify Login functionality error scenario")
     @Severity(SeverityLevel.NORMAL)
     public void testInvalidLogin(HashMap<String, String> hshMap) throws IOException {
-
+        System.out.println("Testcase Description : " + hshMap.get("testcase description"));
         //Home page Login button is clicked.
         HomePage homePage = new HomePage(driver);
         homePage.clickLoginButton();
-
 
         //Provide credentials on Login page.
         LoginPage loginPage = new LoginPage(driver);
@@ -73,7 +69,6 @@ public class LoginTest extends BaseClass {
 
         //Validate Error message.
         CommonUtils.assertFields("equals", "Login Error Message ", hshMap.get("validation"), loginPage.getErrorMessageText());
-
     }
 
 
