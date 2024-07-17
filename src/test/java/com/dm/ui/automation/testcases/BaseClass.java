@@ -52,7 +52,7 @@ public class BaseClass {
     @AfterMethod
     public void endTestMethod() {
         System.out.println("Test execution Ended....");
-        //driver.quit();
+        driver.quit();
     }
 
     @AfterSuite
