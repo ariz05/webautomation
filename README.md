@@ -30,7 +30,7 @@ This project contains code base for Web automation assignment. Under this, we ar
 
 #### **Execution using maven through the commandline –**
 
-#As this project uses Maven, we can invoke the tests using Maven goals.
+As this project uses Maven, we can invoke the tests using Maven goals.
 
     1. Pull the code from github using command "git clone "
     2. To run the test,point Maven to the project and use the goals:
@@ -64,7 +64,7 @@ help of version controlling to avoid any data loss.|
 
 #### **About project files/directories –**
 
-##This project is built on Maven build tool. It consists of below components:
+This project is built on Maven build tool. It consists of below components:
 
 1. src module ->   This module keeps test cases, Object Repository, test data and common utilities that will be needed
    for the framework
