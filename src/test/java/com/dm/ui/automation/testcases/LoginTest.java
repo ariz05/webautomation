@@ -20,7 +20,7 @@ public class LoginTest extends BaseClass {
     @Test(dataProvider = "ValidLogin")
     @Description("Test to validate Login Functionality")
     @Epic("EP002 - UI Testing Login Page")
-    @Feature("Home page Validation")
+    @Feature("Login page Validation")
     @Story("Story : Login Functionality is working using valid credentials")
     @Step("Verify Login functionality")
     @Severity(SeverityLevel.NORMAL)
@@ -47,7 +47,7 @@ public class LoginTest extends BaseClass {
     //Error scenarios.
     @Test(dataProvider = "InvalidLogin")
     @Description("Test to validate Login Functionality")
-    @Epic("EP002 - UI Testing")
+    @Epic("EP002 - UI Testing Login Page")
     @Feature("Login page Validation")
     @Story("Story : Login Functionality throws error message using invalid credentials")
     @Step("Verify Login functionality error scenario")

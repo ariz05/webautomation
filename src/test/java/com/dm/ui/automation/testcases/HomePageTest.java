@@ -10,9 +10,10 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+
+import static com.dm.ui.automation.utilities.CommonUtils.getTimeZoneDate;
 
 
 @Listeners({ReportListener.class})
@@ -24,9 +25,10 @@ public class HomePageTest extends BaseClass {
     @Epic("EP001 - UI Testing Homepage")
     @Feature("Home page Validation")
     @Story("Story : Login button is working as expected.")
-    @Step("Verify Login page is opened")
+    @Step("Verify Login page is opened on clicking login button")
     @Severity(SeverityLevel.NORMAL)
     public void openLoginPage(HashMap<String, String> hshMap) throws IOException {
+
         System.out.println("Testcase Description : " + hshMap.get("testcase description"));
         HomePage homePage = new HomePage(driver);
         homePage.clickLoginButton();
@@ -49,8 +51,7 @@ public class HomePageTest extends BaseClass {
         CommonUtils.assertFields("equals", "HomePageTitle", hshMap.get("validation"), homePage.getHomePageTitle());
         //Validate today's date.
         String pattern = "EEEE, MMMM dd, yyyy";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        String date = simpleDateFormat.format(new Date());
+        String date = getTimeZoneDate(new Date(), pattern, "America/New_York");
         CommonUtils.assertFields("equals", "HomePageDate", date, homePage.getTodayDate());
 
     }

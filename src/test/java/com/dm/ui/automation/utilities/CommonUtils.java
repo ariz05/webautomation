@@ -2,7 +2,11 @@ package com.dm.ui.automation.utilities;
 
 import org.testng.Assert;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Optional;
+import java.util.TimeZone;
 
 public class CommonUtils {
 
@@ -43,5 +47,19 @@ public class CommonUtils {
                 Assert.fail("Invalid Value Type for assertion");
                 break;
         }
+    }
+
+    public static String getTimeZoneDate(Date date, String format, String timeZone) {
+        if (date == null) return null;
+        // create SimpleDateFormat object with input format
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
+        // default system timezone if passed null or empty
+        if (timeZone == null || "".equalsIgnoreCase(timeZone.trim())) {
+            timeZone = Calendar.getInstance().getTimeZone().getID();
+        }
+        // set timezone to SimpleDateFormat
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone(timeZone));
+        // return Date in required format with timezone as String
+        return simpleDateFormat.format(date);
     }
 }

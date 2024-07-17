@@ -6,7 +6,7 @@
     <listeners>
         <listener class-name="com.dm.ui.automation.utilities.ReportListener"/>
     </listeners>
-    <test name="UI tests for Home page and Login Functionality">
+    <test name="UI tests for Home page and Login Page">
         <classes>
             <class name="com.dm.ui.automation.testcases.HomePageTest"/>
             <class name="com.dm.ui.automation.testcases.LoginTest"/>

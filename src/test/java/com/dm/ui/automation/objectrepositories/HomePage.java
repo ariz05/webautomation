@@ -1,5 +1,6 @@
 package com.dm.ui.automation.objectrepositories;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,12 +20,14 @@ public class HomePage {
         PageFactory.initElements(lDriver, this);
     }
 
+    @Step("Click on login button on homepage.")
     public void clickLoginButton() {
         btnLogin.click();
         System.out.println("Log in button is clicked successfully.");
 
     }
 
+    @Step("Get Today's date from home page.")
     public String getTodayDate() {
         String dateToday = lblTodayDate.getText();
         System.out.println("Today's date is retrieved successfully.");
@@ -32,13 +35,13 @@ public class HomePage {
 
     }
 
+    @Step("Get home page title.")
     public String getHomePageTitle() {
         String title = lDriver.getTitle();
         System.out.println("Home page is navigated successfully.");
         return title;
 
     }
-
 
 
 }
