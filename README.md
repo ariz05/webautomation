@@ -1,6 +1,18 @@
 #### Web Automation Project
 
-This project contains code base for Web automation assignment. Under this, we are writing end to end automated tests for GUI testing.
+This project contains code base for Web automation assignment. Under this, we are writing end to end automated tests for
+GUI testing.
+Website under test - NY Times : https://www.nytimes.com/international/
+
+### **Test cases covered under this framework**
+
+* HomePage_TC01 - Test to validate when user clicks the login button it should navigate the user from home page to the
+  Login page.
+* HomePage_TC02 - Test to validate that the displayed date on the home page should be today's date with respect to the
+  US time zone.
+* LoginPage_TC03 - Test to validate that user should be able to login using valid credentials.
+* LoginPage_TC04 - Test to validate that user should not be able to login using invalid credentials and expected error
+  message should be displayed.
 
 ### **Built With**
 
@@ -34,7 +46,7 @@ As this project uses Maven, we can invoke the tests using Maven goals.
 
     1. Pull the code from github using command "git clone "
     2. To run the test,point Maven to the project and use the goals:
-       - clean test
+       - mvn clean test "-DbaseURL=https://www.nytimes.com/international/" "-DbrowserName=CHROME"
 
 #### **Tool / Technologies Leveraged –**
 
@@ -71,7 +83,7 @@ This project is built on Maven build tool. It consists of below components:
    to support GUI automation.
 
 2. Configuration ->   This directory contains config.properties file that keeps property details like baseurl of the
-   environment,browser name, testdatapath, etc.
+   environment,browser name, testdata_path, etc.
    More details can be included and leveraged in future for better parameterization.
 
 3. allure-results ->   Directory contains allure report config files.
@@ -84,12 +96,33 @@ This project is built on Maven build tool. It consists of below components:
 
 6. src/test/java ->   This directory contains subdirectories that contains code to perform different actions during
    execution.
+   #objectreporsitories - Contains page factory classes.
+   #testcases - contains TestNG classes.
+   #testdata - contains excel sheet for maintaining testdata.
+   #utilities - Contains below classes :-
+
+   ##CommonUtils -> Contains methods to put assertions for validations and method to convert date to a particular
+   timezone.
+   ##ConfigConstants -> Contains some constants used for configuration.
+   ##ReadConfig -> Contains methods to retrieve application url, browser name, and retrieve environment variables'
+   value(s) from command-line/jenkins/github.
+   ##Report Listener -> Contains methods to support allure report.
+   ##XLUtils -> Contains methods to retrieve data from Excel file using apache poi library.
+
+#### **Test Data Retrieval from Excel file–**
+
+      1.Reading data from Excel file using apache poi library. 
+      2.TestNG data provider is used for feeding test data to the written scripts.
+      3.Data provider methods are written in each TestNG class for different test methods.
+      4.XLUtils class under src/test/java/com/dm/ui/automation/utilities contains java methods to read data from excel.
+      5.XLUtils class has readExcelData() method which reads data from given Excel sheet in the form of list of hashmap objects.Each hashmap object has 'column name' as key and its corresponding value from given row(depends on test case name provided).
+      6.XLUtils class has getTestData() method which reads data from list of hashmap objects(retruned from readExcelData() method) and stores them in two dimensional array. Finally returns that array object to data provider methods.
 
 ### Scope of enhancements
 
 * Jenkins tool integration for continuous integration.
 * Allure report integration with jenkins using plugin.
 * Multiple environment support to run the suite on QA/Non-prod/prod environments.
-* Code coverage can be improved by adding some more unit tests.
-* More end to end test scenarios can be designed and added to improve test quality.   		 
+* Utility to take screenshots for failed tests acn be added.
+* More end-to-end test scenarios can be designed and added to improve test quality.   		 
            
