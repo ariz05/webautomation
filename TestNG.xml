@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="New York Time GUI Tests">
+<suite name="GUI Tests">
 
     <listeners>
         <listener class-name="com.dm.ui.automation.utilities.ReportListener"/>
