@@ -26,6 +26,7 @@ public class ReadConfig {
         envConfigMap = getEnvConfigMap();
     }
 
+    //method to get website url either from config property file or environment variables retrieved.
     public String getApplicationURL() {
         if (String.valueOf(envConfigMap.get("baseURL")).equalsIgnoreCase("") || String.valueOf(envConfigMap.get("baseURL")) == null) {
             return pro.getProperty("baseURL");
@@ -33,6 +34,7 @@ public class ReadConfig {
         return String.valueOf(envConfigMap.get("baseURL"));
     }
 
+    //method to get browser name either from config property file or environment variables retrieved.
     public String getBrowserName() {
         if (String.valueOf(envConfigMap.get("browserName")).equalsIgnoreCase("") || String.valueOf(envConfigMap.get("browserName")) == null) {
             return pro.getProperty("browserName");
@@ -41,7 +43,7 @@ public class ReadConfig {
         return String.valueOf(envConfigMap.get("browserName"));
     }
 
-
+    //method to retrieve environment variables from maven command line arguments and store them in hashmap.
     private void setEnvironmentVariables(String args) {
         String[] keys = args.split("-D");
         for (String key : keys) {
@@ -53,6 +55,7 @@ public class ReadConfig {
 
     }
 
+    //method to read and store all environment variables retrieved from command-line/jenkins/github
     private Map<String, Object> getEnvConfigMap() {
         Map<String, String> configMap = System.getenv();
         Set<String> keys = configMap.keySet();

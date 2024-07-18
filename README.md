@@ -113,13 +113,13 @@ This project is built on Maven build tool. It consists of below components:
       3.Data provider methods are written in each TestNG class for different test methods.
       4.XLUtils class under src/test/java/com/dm/ui/automation/utilities contains java methods to read data from excel.
       5.XLUtils class has readExcelData() method which reads data from given Excel sheet in the form of list of hashmap objects.Each hashmap object has 'column name' as key and its corresponding value from given row(depends on test case name provided).
-      6.XLUtils class has getTestData() method which reads data from list of hashmap objects(retruned from readExcelData() method) and stores them in two dimensional array. Finally returns that array object to data provider methods.
+      6.XLUtils class has getTestData() method which reads data from list of hashmap objects(returned from readExcelData() method) and stores them in two dimensional array. Finally returns that array object to data provider methods.
 
 ### Scope of enhancements
 
 * Jenkins tool integration for continuous integration.
 * Allure report integration with jenkins using plugin.
 * Multiple environment support to run the suite on QA/Non-prod/prod environments.
-* Utility to take screenshots for failed tests acn be added.
+* Utility to take screenshots for failed tests can be added.
 * More end-to-end test scenarios can be designed and added to improve test quality.   		 
            

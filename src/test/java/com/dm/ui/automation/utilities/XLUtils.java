@@ -28,6 +28,7 @@ public class XLUtils {
 
     }
 
+    //method to read data from Excel file and store in a list of hashmap objects.
     public List<HashMap<String, String>> readExcelData(String sheetName, String tcName) {
         Sheet sh = wb.getSheet(sheetName);
         int rowCount = sh.getLastRowNum();
@@ -56,6 +57,7 @@ public class XLUtils {
     }
 
 
+    //method to read data from list of hashmap objects(returned from readExcelData() method) and stores them in two-dimensional array.
     public Object[][] getTestData(String sheetName, String testCaseName) {
         XLUtils xUtils = new XLUtils();
         List<HashMap<String, String>> lst = xUtils.readExcelData(sheetName, testCaseName);
