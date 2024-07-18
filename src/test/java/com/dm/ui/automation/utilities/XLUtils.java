@@ -18,7 +18,7 @@ public class XLUtils {
     public XLUtils() {
         try {
             ReadConfig readConfig = new ReadConfig();
-            String filePath = System.getProperty("user.dir") + readConfig.getTestDataPath();;
+            String filePath = System.getProperty("user.dir") + ConfigConstants.TESTDATA_PATH;
             File file = new File(filePath);
             FileInputStream fis = new FileInputStream(file);
             wb = new XSSFWorkbook(fis);

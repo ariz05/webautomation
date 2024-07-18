@@ -41,10 +41,11 @@ public class LoginTest extends BaseClass {
 
         //Successful Login validation
         SubscriptionPage subscriptionPage = new SubscriptionPage(driver);
-        CommonUtils.assertFields("equals", "SubscriptionPageTitle", hshMap.get("validation"), subscriptionPage.getSubscriptionPageTitle());
+        CommonUtils.assertFields("boolean", "SubscriptionButton", "true", subscriptionPage.checkSubscriptionButtonPresence());
+
     }
 
-    //Error scenarios.
+    //Error scenario to check login using invalid credentials.
     @Test(dataProvider = "InvalidLogin")
     @Description("Test to validate Login Functionality")
     @Epic("EP002 - UI Testing Login Page")
