@@ -96,18 +96,15 @@ This project is built on Maven build tool. It consists of below components:
 
 6. src/test/java ->   This directory contains subdirectories that contains code to perform different actions during
    execution.
-   #objectreporsitories - Contains page factory classes.
-   #testcases - contains TestNG classes.
-   #testdata - contains excel sheet for maintaining testdata.
-   #utilities - Contains below classes :-
-
-   ##CommonUtils -> Contains methods to put assertions for validations and method to convert date to a particular
-   timezone.
-   ##ConfigConstants -> Contains some constants used for configuration.
-   ##ReadConfig -> Contains methods to retrieve application url, browser name, and retrieve environment variables'
-   value(s) from command-line/jenkins/github.
-   ##Report Listener -> Contains methods to support allure report.
-   ##XLUtils -> Contains methods to retrieve data from Excel file using apache poi library.
+                      #objectreporsitories - Contains page factory classes.
+                      #testcases - contains TestNG classes.
+                      #testdata - contains excel sheet for maintaining testdata.
+                      #utilities - Contains below classes :-
+                      ##CommonUtils -> Contains methods to put assertions for validations and method to convert date to a particular timezone.
+                      ##ConfigConstants -> Contains some constants used for configuration.
+                      ##ReadConfig -> Contains methods to retrieve application url, browser name, and retrieve environment variables' value(s) from command-line/jenkins/github.
+                      ##Report Listener -> Contains methods to support allure report.
+                      ##XLUtils -> Contains methods to retrieve data from Excel file using apache poi library.
 
 #### **Test Data Retrieval from Excel file–**
 
