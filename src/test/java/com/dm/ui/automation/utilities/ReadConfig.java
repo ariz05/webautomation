@@ -28,7 +28,7 @@ public class ReadConfig {
 
     //method to get website url either from config property file or environment variables retrieved.
     public String getApplicationURL() {
-        if (String.valueOf(envConfigMap.get("baseURL")).equalsIgnoreCase("") || String.valueOf(envConfigMap.get("baseURL")) == null) {
+        if (String.valueOf(envConfigMap.get("baseURL")).equalsIgnoreCase("") || String.valueOf(envConfigMap.get("baseURL")) == "null") {
             return pro.getProperty("baseURL");
         }
         return String.valueOf(envConfigMap.get("baseURL"));
@@ -36,7 +36,7 @@ public class ReadConfig {
 
     //method to get browser name either from config property file or environment variables retrieved.
     public String getBrowserName() {
-        if (String.valueOf(envConfigMap.get("browserName")).equalsIgnoreCase("") || String.valueOf(envConfigMap.get("browserName")) == null) {
+        if (String.valueOf(envConfigMap.get("browserName")).equalsIgnoreCase("") || String.valueOf(envConfigMap.get("browserName")) == "null") {
             return pro.getProperty("browserName");
         }
 
