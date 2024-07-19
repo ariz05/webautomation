@@ -33,7 +33,7 @@ Website under test - NY Times : https://www.nytimes.com/international/
     5. Configure IntelliJ to point to the right Maven version installed and also ensure maven importing is set to automatic setting.
     6. Make sure to have the Maven IntelliJ plugins installed through market place.
     7. Ensure downloading allure reports binaries and save it on your machine.Set environment path variable for the same. 
-    8. Pull the code from gitlab using command "git clone https://github.com/ariz05/mindtickleautomation.git"
+    8. Pull the code from gitlab using command "git clone https://github.com/ariz05/webautomation.git"
 
 #### **Execution without using maven maven commands -**
 
