@@ -44,7 +44,7 @@ Website under test - NY Times : https://www.nytimes.com/international/
 
 As this project uses Maven, we can invoke the tests using Maven goals.
 
-    1. Pull the code from github using command "git clone "
+    1. Pull the code from github using command "git clone https://github.com/ariz05/webautomation.git"
     2. To run the test,point Maven to the project and use the goals:
        - mvn clean test "-DbaseURL=https://www.nytimes.com/international/" "-DbrowserName=CHROME"
 
