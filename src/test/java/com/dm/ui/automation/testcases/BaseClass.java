@@ -31,6 +31,7 @@ public class BaseClass {
     @BeforeMethod
     public void startMethod() {
         System.out.println("Test Execution started .....");
+        System.out.println("Browser set to : "+browserName);
         if (browserName.equalsIgnoreCase("CHROME")) {
             driver = new ChromeDriver();
 
@@ -44,6 +45,7 @@ public class BaseClass {
             throw new Error("Browser name is not provided correctly. Please mention correct browser name");
 
         }
+        System.out.println("Website URL is : "+baseURL);
         driver.get(baseURL);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
